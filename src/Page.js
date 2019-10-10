@@ -1,6 +1,14 @@
 import React from "react";
+import styled from 'styled-components';
 import Header from './Header';
 import Card from './Card';
+
+const Container = styled.div`
+  display: flex;
+  background: black;
+  flex-direction: column;
+  align-items: center;
+`;
 
 function Page(props){
   return (
