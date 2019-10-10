@@ -51,12 +51,12 @@ font-style: italic
 `;
 
 
-const Card = props => {
+const Card = (props) => {
   return (
     <CardContainer>
-      <Image src = {props.hdurl} alt = 'NASA Astronomy of the Day' />
+      <Image src={props.hdurl} alt='NASA Astronomy of the Day' />
       <Text>
-        <Title> {props.title}</Title>
+        <Title>{props.title}</Title>
         <Date>{props.date}</Date>
         <Explanation>{props.explanation}</Explanation>
         <Copyright>© {props.copyright}</Copyright>

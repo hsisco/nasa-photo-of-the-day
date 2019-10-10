@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import axios from 'axios';
-import Page from './Page';
+import styled from 'styled-components';
+import Header from './Header';
+import Card from './Card';
 
+const Container = styled.div`
+  display: flex;
+  background: black;
+  flex-direction: column;
+  align-items: center;
+`;
 
 function App() {
   const [card, setCard] = useState([]);
@@ -20,15 +28,17 @@ function App() {
   },[]);
 
   return (
-    <div className="App">
-      <Page         
-        title = {card.title}
-        hdurl = {card.hdurl}
-        date = {card.date}
-        explanation = {card.explanation}
-        copyright = {card.copyright}
-        cardURL = {card.url}/>
-    </div>
+    <>
+      <Container>
+        <Header />
+        <Card 
+          title = {card.title}
+          hdurl = {card.hdurl}
+          date = {card.date}
+          explanation = {card.explanation}
+          copyright = {card.copyright} />
+      </Container>  
+    </>
   )}
 
 export default App;
