@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     axios
-    .get('https://api.nasa.gov/planetary/apod?api_key=r5sUbJ04T0QQB9ePgcmclsEuaScYcf7Ovny30X0n')
+    .get('https://api.nasa.gov/planetary/apod?api_key=VnVbCn9guQeJqctFRHNWzKeKMKktVPSfX8KVB8cu')
     .then(response => {
       console.log('Huzzah! card data returned', response.data);
       setCard(response.data);
@@ -17,6 +17,17 @@ function App() {
     })
   },[]);
 
+  return (
+    <div className="App">
+      <Page         
+        title = {card.title}
+        hdurl = {card.hdurl}
+        date = {card.date}
+        explanation = {card.explanation}
+        copyright = {card.copyright}
+        cardURL = {card.url}/>
+    </div>
+  )
 }
 
 export default App;
